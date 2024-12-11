@@ -1,0 +1,67 @@
+:root {
+  /* Brand Colors */
+  --lilypad-primary: #00fff0;
+  --lilypad-black: #000000;
+  --lilypad-white: #ffffff;
+
+  /* Background Colors */
+  --bg-primary: var(--lilypad-black);
+  --bg-secondary: var(--lilypad-white);
+  --bg-accent: var(--lilypad-primary);
+
+  /* Text Colors */
+  --text-primary: var(--lilypad-white);
+  --text-secondary: var(--lilypad-black);
+  --text-accent: var(--lilypad-primary);
+
+  /* Button Colors */
+  --btn-primary-bg: var(--lilypad-primary);
+  --btn-primary-text: var(--lilypad-black);
+  --btn-primary-hover: #00e6d9;
+
+  /* Navigation Colors */
+  --nav-bg: transparent;
+  --nav-text: var(--lilypad-white);
+  --nav-active: var(--lilypad-primary);
+
+  /* Border Colors */
+  --border-primary: var(--lilypad-primary);
+  --border-secondary: var(--lilypad-white);
+}
+
+/* Dark mode overrides if needed
+[data-theme="dark"] {
+  /* Add dark mode specific variables here if needed */
+
+.hero-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.explore-button {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+.explore-button:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+.navigation {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+.navigation .active {
+  color: var(--nav-active);
+}
+
+/* hover */
+
+.img-container {
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-container:hover {
+  transform: translateY(-10px); /* Moves the image div up */
+}
