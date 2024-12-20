@@ -9,7 +9,7 @@ const MiniproductSlider = ({ data, title, hidden, }) => {
     const showNavigation = data.length > 8;
 
     return (
-        <section className="container text-[var(--lilypad-primary)] mx-auto px-4 md:px-14 py-8">
+        <section className="container text-[var(--lilypad-primary)] mx-auto px-4 md:px-10 py-8">
             <h2 className="text-2xl text-[var(--lilypad-primary)] font-bold mb-4">{title}</h2>
             <hr />
 

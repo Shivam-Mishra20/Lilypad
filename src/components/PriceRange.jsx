@@ -11,7 +11,7 @@ const PriceRange = () => {
     };
     return (
         <>
-            <section className="container text-[var(--lilypad-primary)] mx-auto px-3 md:px-14 py-8">
+            <section className="container text-[var(--lilypad-primary)] mx-auto px-3 md:px-10 py-8">
                 <h2 className="text-2xl text-[var(--lilypad-primary)] font-bold mb-4">Filter By Price</h2>
                 <hr />
                 <div className=' w-auto md:w-[30%] mx-10  my-20 '>
