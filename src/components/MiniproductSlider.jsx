@@ -24,9 +24,12 @@ const MiniproductSlider = ({ data, title, hidden, }) => {
                     className="swiper-container"
                     breakpoints={{
                         320: {
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                             spaceBetween: 15,
                         },
+
+
+
                         640: {
                             slidesPerView: 4,
                             spaceBetween: 15,

@@ -6,7 +6,7 @@ import '../App.css'
 
 const ProductGrid = ({ products }) => {
     return (
-        <div className="container mx-auto px-10 py-8">
+        <div className="container mx-auto px-4 md:px-10 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {products.map((product, index) => (
                     <div
