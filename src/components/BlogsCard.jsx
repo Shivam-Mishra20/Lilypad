@@ -40,7 +40,7 @@ const blogPosts = [
 const BlogsCard = () => {
     return (
         <div className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-bold text-[var(--lilypad-primary)] mb-4">From The Blogs</h2>
+            <h2 className="text-3xl font-bold  text-[var(--lilypad-primary)] mb-4">From The Blogs</h2>
 
             <hr />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 gap-6">

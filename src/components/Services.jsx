@@ -28,7 +28,7 @@ function FeatureCard({ icon: Icon, title, description }) {
     const [isHovered, setIsHovered] = useState(false)
 
     return (
-        <div className="flex flex-col items-center w-full gap-3 justify-center text-center">
+        <div className="flex  min-w-full  items-center    gap-3 justify-between  ">
             <div
                 className="relative w-12 h-12"
                 onMouseEnter={() => setIsHovered(true)}
@@ -51,9 +51,9 @@ function FeatureCard({ icon: Icon, title, description }) {
 export function Services() {
     return (
         <div className="w-full overflow-x-auto  bg-gray-100 my-20">
-            <div className="flex flex-nowrap gap-8 p-6 ">
+            <div className="flex flex-nowrap gap-8 p-8 ">
                 {features.map((feature, index) => (
-                    <div key={index} className="min-w-[300px] flex-shrink-0">
+                    <div key={index} className="min-w-[200px] mx-auto flex-shrink-0">
                         <FeatureCard {...feature} />
                     </div>
                 ))}

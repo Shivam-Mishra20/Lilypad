@@ -240,3 +240,160 @@ export const productsecond = [
     },
 ];
 ;
+
+
+
+export const Brands = [
+    {
+        name: "HERALDEBIKE",
+        image: "/img/brand logos/logo11.png",
+    },
+    {
+        name: "Electric City Bike",
+        image: "/img/brand logos/logo2.jpg",
+    },
+    {
+        name: "Folding Electric Bike",
+        image: "/img/brand logos/logo3.jpeg",
+    },
+    {
+        name: "Electric Hoverboard",
+        image: "/img/brand logos/logo4.png",
+    },
+    {
+        name: "Electric Scooter",
+        image: "/img/brand logos/logo5.jpg",
+    },
+    {
+        name: "Hybrid Electric Bike",
+        image: "/img/brand logos/logo6.png",
+    },
+    {
+        name: "Electric Cargo Bike",
+        image: "/img/brand logos/logo7.png",
+    },
+    {
+        name: "Electric Road Bike",
+        image: "/img/brand logos/logo8.jpg",
+    },
+    {
+        name: "Electric Sports Bike",
+        image: "/img/brand logos/logo9.png",
+    },
+    {
+        name: "Electric Cargo Bike",
+        image: "/img/brand logos/logo10.png",
+    },
+    {
+        name: "Electric Cargo Bike",
+        image: "/img/brand logos/logo1.png",
+    },
+
+];
+
+
+export const category = [
+    {
+        name: "Electric Bicycle",
+        image: "/img/Bike/cycc.webp ",
+
+    }
+    ,
+    {
+        name: "Electric Bike",
+        image: "/img/Bike/bike4.webp",
+    }
+    ,
+    {
+        name: "High-Speed Scooter",
+        image: "/img/Bike/scooty.webp",
+    }
+    ,
+    {
+        name: "Kickscooter",
+        image: "/img/Bike/0I0A4071 copy.webp",
+    }
+    ,
+    {
+        name: "Low-Speed Scooter",
+        image: "/img/Bike/evolet_pony_sideview.webp",
+    }
+    ,
+    {
+        name: "Segway",
+        image: "/img/Bike/HOVER.webp",
+    }
+    ,
+
+
+
+
+
+
+
+
+
+]
+
+
+export const Trendingitem = [
+
+    {
+        id: 1,
+        category: 'Electric Bike',
+        name: 'Kids Electric Bike Bulk 10 Pack Multi Colored For Students',
+        availability: 70,
+        price: 1000.00,
+        image: "/img/Bike/blacks.webp",
+    },
+    {
+        id: 2,
+        category: 'Electric Bike',
+        name: 'Professional Electric Scooter',
+        availability: 45,
+        price: 500.00,
+        image: "/img/Bike/bike2.jpg",
+    },
+    {
+        id: 3,
+        category: 'Hoverboard',
+        name: 'Bang & Olufsen Beoplay H9i Wireless Hoverboard',
+        availability: 100,
+        price: 602.00,
+        image: "/img/Bike/reds.webp",
+    },
+    {
+        id: 4,
+        category: 'Electric Scooter',
+        name: 'Electric Scooter With Advanced Speed Control and Health Monitoring',
+        availability: 25,
+        price: 602.00,
+        image: "/img/Bike/bike6.webp",
+    },
+    {
+        id: 5,
+        category: 'Hoverboard',
+        name: 'APPLE Hoverboard Series 2 – 42 Mm Stainless Steel Frame',
+        availability: 50,
+        price: 1202.00,
+        image: "/img/Bike/cycc.webp",
+    },
+    {
+        id: 6,
+        category: 'Electric Bike',
+        name: 'High-Speed Electric Bike for Students',
+        availability: 60,
+        price: 1100.00,
+        image: "/img/Bike/blacks.webp",
+    },
+    {
+        id: 7,
+        category: 'Electric Bike',
+        name: 'Compact Electric Scooter',
+        availability: 35,
+        price: 450.00,
+        image: "/img/Bike/bike2.jpg",
+    },
+
+
+];

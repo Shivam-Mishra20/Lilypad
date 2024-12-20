@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, ChevronLeft, ChevronRight, Heart, Repeat, Star } from 'lucide-react';
 
 import '../App.css'
+import { Trendingitem as products } from '../Data/Data';
 const Button = ({ children, onClick, disabled, className }) => (
     <button
         onClick={onClick}
@@ -22,48 +23,7 @@ const CardContent = ({ children, className }) => (
     <div className={`p-4 ${className}`}>{children}</div>
 );
 
-const products = [
-    {
-        id: 1,
-        category: 'Electric Bike',
-        name: 'Kids Electric Bike Bulk 10 Pack Multi Colored For Students',
-        availability: 70,
-        price: 1000.00,
-        image: "/img/Bike/blacks.webp",
-    },
-    {
-        id: 2,
-        category: 'Electric Bike',
-        name: ' Professional Electric Scooter',
-        availability: 45,
-        price: 500.00,
-        image: "/img/Bike/bike2.jpg",
-    },
-    {
-        id: 3,
-        category: 'Hoverboard',
-        name: 'Bang & Olufsen Beoplay H9i Wireless Hoverboard',
-        availability: 100,
-        price: 602.00,
-        image: "/img/Bike/reds.webp",
-    },
-    {
-        id: 4,
-        category: 'Electric Scooter',
-        name: 'Electric Scooter With Advanced Speed Control and Health Monitoring',
-        availability: 25,
-        price: 602.00,
-        image: "/img/Bike/bike6.webp",
-    },
-    {
-        id: 5,
-        category: 'Hoverboard',
-        name: 'APPLE Hoverboard Series 2 – 42 Mm Stainless Steel Frame',
-        availability: 50,
-        price: 1202.00,
-        image: "/img/Bike/cycc.webp",
-    }
-];
+
 
 
 const ProductSlider = () => {
@@ -86,7 +46,7 @@ const ProductSlider = () => {
         <div className=' bg-[#F5F5F5] mx-4 md:mx-12 rounded-xl '>
 
             <div className="w-full max-w-7xl mx-auto p-6 ">
-                <div className="flex      items-center justify-between mb-8">
+                <div className="flex  items-center justify-between mb-8">
                     <div className=' flex gap-5'>
                         <dvi>
                             <span className="  text-sm md:text-2xl text-[var(--lilypad-primary)] inline font-bold">Our Trending Products</span>
@@ -153,7 +113,7 @@ const ProductSlider = () => {
                                     <img
                                         src={product.image}
                                         alt={product.name}
-                                        className="w-full h-full object-cover rounded-lg"
+                                        className="w-full h-full object-contain rounded-lg"
                                     />
                                 </div>
                                 <div className="space-y-2">

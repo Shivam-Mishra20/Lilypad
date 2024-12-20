@@ -16,7 +16,7 @@ export default function ProductListing() {
         availability: 40,
         rating: 4,
         images: [
-            "/img/cyc1.webp",
+
             "/img/Bike/oxo.webp",
             "/img/Bike/oxo1.webp",
             "/img/cyc3.webp",
@@ -139,19 +139,20 @@ export default function ProductListing() {
                             </button>
                         </div>
                     </div>
+                    <hr />
 
-                    <div className="relative bg-white shadow-xl p-6 rounded-md">
+                    <div className="relative bg-white shadow-xl mt-6 p-6 rounded-md">
                         {specialProduct.discount && (
                             <span className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">
                                 {specialProduct.discount}%
                             </span>
                         )}
                         <div className="p-1">
-                            <div className="relative  h-auto  mb-4">
+                            <div className="relative  h-auto  mb-1">
                                 <img
                                     src={specialProduct.images[activeImageIndex]}
                                     alt={specialProduct.name}
-                                    className="object-contain w-[250px] md:w-[404px]  "
+                                    className="object-contain w-[200px] md:w-[404px]  "
                                 />
                             </div>
                             <div className="space-y-4">
@@ -187,9 +188,14 @@ export default function ProductListing() {
 
                 <div>
                     <h2 className="text-2xl font-bold text-[var(--lilypad-primary) mb-4">Bestsellers</h2>
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <hr />
+
+                    <div className="grid  mt-6 sm:grid-cols-2 gap-4">
                         {bestsellers.map((product) => (
-                            <div key={product.id} className="relative   bg-white shadow-md rounded-md">
+                            <div
+                                key={product.id}
+                                className="relative bg-white rounded-md  transition-transform transform hover:scale-105 hover:border "
+                            >
                                 <div className="p-2">
                                     <button
                                         className="absolute right-2 top-2 z-10 p-2"
@@ -197,14 +203,12 @@ export default function ProductListing() {
                                         <Heart className="h-4 w-4" />
                                     </button>
 
-                                    <div className=' flex items-center justify-center gap-4'>
-
-
+                                    <div className="flex items-center justify-center gap-4">
                                         <div className="relative aspect-square mb-2">
                                             <img
                                                 src={product.image}
                                                 alt={product.name}
-                                                className="object-contain  h-[200px]  "
+                                                className="object-contain h-[200px]"
                                             />
                                         </div>
                                         <div className="space-y-2">
@@ -219,6 +223,7 @@ export default function ProductListing() {
                                     </div>
                                 </div>
                             </div>
+
                         ))}
                     </div>
                 </div>
