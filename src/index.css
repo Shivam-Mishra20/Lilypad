@@ -1,16 +1,20 @@
+/* Import Raleway Font */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/* Import Additional Styles */
 
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "components/ui/styles.css";
-
+/* Dark Mode Background */
 .dark {
   background: black;
 }
 
+/* Custom Layer for Tailwind CSS */
 @layer base {
+  /* Define Root Variables for Light Mode */
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -39,6 +43,7 @@
     --radius: 0.5rem;
   }
 
+  /* Define Root Variables for Dark Mode */
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -67,12 +72,25 @@
   }
 }
 
+/* Base Styles */
 @layer base {
   * {
     @apply border-border;
+    /* Apply border color from Tailwind configuration */
   }
 
   body {
     @apply bg-background text-foreground;
+    /* Apply background and text color from CSS variables */
+    font-family: "Raleway", sans-serif;
+    /* Apply Raleway font */
+  }
+
+  /* Additional global styles */
+  .dark body {
+    background-color: var(--background);
+    /* Dark mode background */
+    color: var(--foreground);
+    /* Dark mode text */
   }
 }

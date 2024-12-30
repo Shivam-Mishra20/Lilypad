@@ -1,5 +1,6 @@
+
 /** @type {import('tailwindcss').Config} */
-import tailwindcssAnimate from 'tailwindcss-animate';
+
 
 export default {
 	content: [
@@ -92,7 +93,5 @@ export default {
 	},
 
 	darkMode: ['class'], // Enables dark mode with a class
-	plugins: [
-		tailwindcssAnimate(), // Use the imported plugin here
-	],
+
 }
