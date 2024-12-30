@@ -144,7 +144,7 @@ export const slides = [
 
 
 
-export const products = [
+export const Productcards = [
     {
         tag: "BIG SAVING",
         title: "Scooty Eco-Cyan",
@@ -153,7 +153,7 @@ export const products = [
         ctaText: "Buy Now",
         ctaLink: "#",
         image: "/img/Bike/scootycyan.webp",
-        bgColor: "bg-[#f5f2ef]",
+        bgColor: "bg-[#f5f2ef] dark:bg-gray-400 ",
     },
     {
         tag: "15% OFF",
@@ -163,7 +163,7 @@ export const products = [
         ctaText: "Learn More",
         ctaLink: "#",
         image: "/img/Bike/cycc.webp",
-        bgColor: "bg-[#fdf1f1]",
+        bgColor: "bg-[#fdf1f1]  dark:bg-gray-300",
     },
     {
         tag: "FLAT 20% OFF",
@@ -173,7 +173,7 @@ export const products = [
         ctaText: "Buy Now",
         ctaLink: "#",
         image: "/img/Bike/bike6.webp",
-        bgColor: "bg-[#f1f4f9]",
+        bgColor: "bg-[#f1f4f9]  dark:bg-gray-400",
     },
     {
         tag: "BEST PRICE",
@@ -183,7 +183,7 @@ export const products = [
         ctaText: "Learn More",
         ctaLink: "#",
         image: "/img/Bike/HUSE_H20-1.webp",
-        bgColor: "bg-white",
+        bgColor: "bg-gray-100  dark:bg-gray-300",
     },
     {
         tag: "OVER 50%",
@@ -193,7 +193,7 @@ export const products = [
         ctaText: "Buy Now",
         ctaLink: "#",
         image: "/img/Bike/oxo.webp",
-        bgColor: "bg-[#f1f4f9]",
+        bgColor: "bg-[#f1f4f9]  dark:bg-gray-600",
     },
     {
         tag: "SAVE EXTRA",
@@ -203,42 +203,11 @@ export const products = [
         ctaText: "Learn More",
         ctaLink: "#",
         image: "/img/Bike/oxo1.webp",
-        bgColor: "bg-[#f7f3f9]",
+        bgColor: "bg-[#f7f3f9]  dark:bg-gray-900",
     },
 ];
 
-export const productsecond = [
-    {
-        tag: "BIG SAVING",
-        title: "Cycle Oxo Explorer",
-        subtitle: "Conquer Trails in Style.",
-        price: "From $429.00",
-        ctaText: "Buy Now",
-        ctaLink: "#",
-        image: "/img/Bike/oxo3.webp",
-        bgColor: "bg-[#f5f2ef]",
-    },
-    {
-        tag: "15% OFF",
-        title: "EV City Bike",
-        subtitle: "Effortless Urban Commutes.",
-        price: "From $399.00",
-        ctaText: "Learn More",
-        ctaLink: "#",
-        image: "/img/Bike/oxo1.webp",
-        bgColor: "bg-[#fdf1f1]",
-    },
-    {
-        tag: "FLAT 20% OFF",
-        title: "Scooty Royal Prime",
-        subtitle: "Bold Colors, Premium Design.",
-        price: "From $290.00",
-        ctaText: "Buy Now",
-        ctaLink: "#",
-        image: "/img/Bike/royal prime (1).webp",
-        bgColor: "bg-[#f1f4f9]",
-    },
-];
+
 ;
 
 
@@ -396,4 +365,94 @@ export const Trendingitem = [
     },
 
 
+];
+
+
+
+
+export const blogPosts = [
+    {
+        id: 1,
+        date: "25  Dec 2024",
+        title: "The Rise of Electric Bikes in Modern  ",
+        excerpt: "Electric bikes are revolutionizing the way we commute. Learn how these eco-friendly machines are becoming a preferred choice for urban mobility.",
+        imageUrl: "/img/Bike/oxo1.webp"
+    },
+    {
+        id: 2,
+        date: "17  Dec 2024",
+        title: "EV Bikes: The Future of   Transportation",
+        excerpt: "Discover the benefits of switching to electric bikes, from reducing carbon footprints to cutting down on traffic congestion. The future of transport is electric!",
+        imageUrl: "/img/Bike/0I0A4071 copy.webp"
+    },
+    {
+        id: 3,
+        date: "25 Dec 2024",
+        title: "How Electric Bikes Are Changing  ",
+        excerpt: "Electric bikes are reshaping the cycling world by offering a combination of performance, convenience, and sustainability. Here’s how they’re making an impact.",
+        imageUrl: "/img/Bike/evolet_derby_frontview.webp"
+    },
+    {
+        id: 4,
+        date: "20 Dec 2024",
+        title: "Why Electric Bikes Are the Perfect  ",
+        excerpt: "With growing urbanization and concerns about pollution, electric bikes offer an ideal solution for commuters seeking an efficient, eco-friendly, and cost-effective way to travel.",
+        imageUrl: "/img/Bike/scooty.webp"
+    },
+    {
+        id: 5,
+        date: "17  Dec 2024",
+        title: "EV Bikes: The Future of Sustainable Transportation",
+        excerpt: "Discover the benefits of switching to electric bikes, from reducing carbon footprints to cutting down on traffic congestion. The future of transport is electric!",
+        imageUrl: "/img/Bike/0I0A4071 copy.webp"
+    },
+    {
+        id: 6,
+        date: "25 Dec 2024",
+        title: "How Electric Bikes Are Changing the Cycling Industry",
+        excerpt: "Electric bikes are reshaping the cycling world by offering a combination of performance, convenience, and sustainability. Here’s how they’re making an impact.",
+        imageUrl: "/img/Bike/evolet_derby_frontview.webp"
+    },
+    {
+        id: 7,
+        date: "20 Dec 2024",
+        title: "Why Electric Bikes Are the Perfect Solution for City Commuters",
+        excerpt: "With growing urbanization and concerns about pollution, electric bikes offer an ideal solution for commuters seeking an efficient, eco-friendly, and cost-effective way to travel.",
+        imageUrl: "/img/Bike/scooty.webp"
+    }
+];
+
+
+
+export const faqData = [
+    {
+        question: "Is it possible to exchange an old vehicle for a new one?",
+        answer: "Yes. We offer a vehicle exchange program where you can trade in your old vehicle towards the purchase of a new electric vehicle. Contact us for a valuation.",
+        value: "item-1"
+    },
+    {
+        question: "Which EV Brand options are available with Lilypad?",
+        answer: "We partner with multiple leading EV manufacturers to offer a wide range of electric vehicles. Our collection includes various models suitable for different needs and budgets.",
+        value: "item-2"
+    },
+    {
+        question: "What&apos;s the process of purchasing an EV from Lilypad?",
+        answer: "The purchase process is straightforward: browse our selection, schedule a test drive, choose your vehicle, complete the paperwork, and drive away in your new EV.",
+        value: "item-3"
+    },
+    {
+        question: "Can I buy EV accessories and chargers from Lilypad?",
+        answer: "Yes, we offer a complete range of EV accessories and charging solutions. From home chargers to adapters, we have everything you need for your electric vehicle.",
+        value: "item-4"
+    },
+    {
+        question: "What are the charging solutions available with Lilypad and how much does it cost?",
+        answer: "We provide various charging solutions including home charging units, public charging access, and workplace charging installations. Costs vary based on the solution you choose.",
+        value: "item-5"
+    },
+    {
+        question: "How can I reach out to Lilypad for any queries or concerns?",
+        answer: "You can reach us through our customer support hotline, email, or by visiting one of our physical locations. Our team is available to assist you with any questions.",
+        value: "item-6"
+    },
 ];

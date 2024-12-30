@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-white">
-            <div className="container mx-auto px-4 py-12">
+
+
+        <footer className="bg-black dark:border-t-2 border-cyan w-full  text-white px-6 ">
+            <div className="container mx-auto px-4 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Logo Section */}
                     <div className="space-y-4">
@@ -82,7 +84,7 @@ const Footer = () => {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
+                <div className="mt-12 pt-2 border-t border-white/10 text-center text-sm text-white/60">
                     © 2024 LilyPad. All rights reserved.
                 </div>
             </div>

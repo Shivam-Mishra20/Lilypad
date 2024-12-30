@@ -1,4 +1,3 @@
-'use client'
 
 import { useState } from 'react'
 import { Heart, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -177,7 +176,7 @@ export default function ProductListing() {
                                         <span>:</span>
                                         <span className="text-red-500">06</span>
                                     </div>
-                                    <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                                    <button className="bg-[var(--lilypad-primary)]  hover:bg-black text-white px-4 py-2 rounded-md">
                                         Add to Cart
                                     </button>
                                 </div>

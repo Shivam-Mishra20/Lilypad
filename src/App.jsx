@@ -1,19 +1,16 @@
-import 'antd/dist/reset.css';
 
-import Page from "./Page/Page";
-
-
+import HomePage from './Page/HomePage';
 
 const App = () => {
   return (
-    <div >
+    <>
 
 
-      <Page />
+      <HomePage />
 
 
 
-    </div>
+    </>
   )
 }
 
