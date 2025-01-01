@@ -31,8 +31,8 @@ const Navtop = () => {
     }, [darkMode]);
 
     return (
-        <div className="w-full bg-[#1D1E18] border-b hidden sm:block    pb-1 text-white px-10 py-2">
-            <div className="container mx-auto flex items-center justify-between text-sm">
+        <div className="w-full bg-[#1D1E18] border-b hidden sm:block    pb-1 text-white  py-2">
+            <div className="  w-full   flex items-center justify-between text-sm">
                 <div className=" hidden md:flex items-center  gap-4">
                     <div className="flex items-center gap-1">
                         English

@@ -21,10 +21,10 @@ const Blog_Sec = () => {
     };
 
     return (
-        <div className="container mx-auto font-raleway px-4 py-8">
-            <div className='flex items-center justify-between w-full'>
-                <h2 className="text-xl sm:text-2xl font-bold dark:text-cyan  text-black  mb-4">From The Blogs</h2>
-                <div className="flex gap-2">
+        <div className="container mx-auto font-raleway px-6 sm:px-4 py-8">
+            <div className='flex items-center  justify-between w-full'>
+                <h2 className="text-xl sm:text-2xl font-bold dark:text-cyan  text-black   ">From The Blogs</h2>
+                <div className="flex  gap-2">
                     <button
                         className="text-black cursor-pointer bg-white rounded-full p-4 shadow-lg"
                         onClick={previousSlide}

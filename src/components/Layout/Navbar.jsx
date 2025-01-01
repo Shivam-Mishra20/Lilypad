@@ -1,7 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Search, ChevronDown, ShoppingCartIcon, User, SearchCheck, AlignJustify, SunMoon, Sun } from 'lucide-react';
+import {
+    Search,
+    ChevronDown,
+    ShoppingCartIcon,
+    User,
+    SearchCheck,
+    AlignJustify,
+    SunMoon,
+    Sun,
+    ChevronUp,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import '../../App.css';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import "../../App.css";
 
 const categories = [
     {
@@ -28,78 +44,39 @@ const categories = [
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null);
     const [isFixed, setIsFixed] = useState(false);
-
-
     const [darkMode, setDarkMode] = useState(false);
-
-
-    useEffect(() => {
-        // Check if the user prefers dark mode
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setDarkMode(savedTheme === 'dark');
-        } else {
-            // Check user's system preference
-            setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-        }
-    }, []);
-
+    const [openDropdown, setOpenDropdown] = useState(null);
 
     useEffect(() => {
-        // Toggle the dark class based on state
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
+        const theme = darkMode ? "dark" : "light";
+        document.documentElement.classList.toggle("dark", darkMode);
+        localStorage.setItem("theme", theme);
     }, [darkMode]);
 
-    let leaveTimeout;
-
-    const handleMouseEnter = (index) => {
-        clearTimeout(leaveTimeout);
-        setOpenDropdown(index);
-    };
-
-    const handleMouseLeave = () => {
-        leaveTimeout = setTimeout(() => {
-            setOpenDropdown(null);
-        }, 200);
-    };
-
-    const handleToggleClick = (index) => {
-        setOpenDropdown(openDropdown === index ? null : index);
-    };
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setIsFixed(true);
-            } else {
-                setIsFixed(false);
-            }
-        };
-
+        const handleScroll = () => setIsFixed(window.scrollY > 0);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleMouseEnter = (index) => {
+        clearTimeout(window.leaveTimeout);
+        setOpenDropdown(index);
+    };
+
+    const handleMouseLeave = () => {
+        window.leaveTimeout = setTimeout(() => setOpenDropdown(null), 200);
+    };
+
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
+
     return (
-
-
-
-
-        <nav className={`w-full bg-[#1D1E18] text-white  px-4  lg:px-4 py-4 ${isFixed ? "fixed top-0 left-0 z-50 shadow-md" : ""}`}>
-
-            <div className="container flex items-center justify-between">
+        <nav
+            className={`w-full bg-[#1D1E18] text-white px-4 lg:px-4 py-4 ${isFixed ? "fixed top-0 left-0 z-50 shadow-md" : ""
+                }`}
+        >
+            <div className="flex items-center justify-between">
                 {/* Logo and Hamburger Menu */}
                 {!menuOpen && (
                     <div className="flex items-center">
@@ -107,42 +84,55 @@ const Navbar = () => {
                             onClick={toggleMenu}
                             className="mr-2 lg:hidden focus:outline-none"
                         >
-                            <AlignJustify className="visible" />
+                            <AlignJustify />
                         </button>
                         <Link to="/" className="text-2xl font-bold w-[160px] flex items-center">
                             <img src="/img/lilylogo.png" alt="Lily Logo" />
                         </Link>
 
-                        {/* navlinks */}
-                        <ul className={`hidden lg:flex md:ml-6 lg:ml-4 lg:space-x-6`}>
+                        {/* Navigation Links */}
+                        <ul className="hidden lg:flex md:ml-6 lg:ml-4 lg:space-x-6">
                             {categories.map((category, index) => (
                                 <li
                                     key={category.name}
-                                    className="text-xs md:text-sm group relative"
+                                    className="text-xs md:text-[12px] group    relative"
                                     onMouseEnter={() => handleMouseEnter(index)}
-                                    onMouseLeave={() => handleMouseLeave(index)}
+                                    onMouseLeave={handleMouseLeave}
                                 >
                                     <button
                                         className="flex items-center space-x-1 py-2"
-                                        onClick={() => handleToggleClick(index)}
+                                        onClick={() =>
+                                            setOpenDropdown(openDropdown === index ? null : index)
+                                        }
                                     >
-                                        <div className="relative">
+                                        <span className="relative">
                                             {category.name}
                                             {category.items.length > 0 && (
                                                 <span className="absolute -bottom-1 left-0 w-full hidden h-0.5 bg-cyan transition-all group-hover:block"></span>
                                             )}
-                                        </div>
-                                        {category.items.length > 0 && <ChevronDown className="h-4 w-4" />}
+                                        </span>
+                                        {category.items.length > 0 && (
+                                            <div className="relative">
+                                                <ChevronDown
+                                                    className={`h-4 w-4 transform transition-transform duration-300 ${openDropdown === index ? "rotate-180" : "rotate-0"
+                                                        }`}
+                                                />
+                                            </div>
+                                        )}
                                     </button>
 
                                     {/* Dropdown Menu */}
                                     {category.items.length > 0 && (
                                         <ul
-                                            className={`absolute bg-white text-black border border-gray-700 mt-4 shadow-md py-2 w-48 z-10 transition-opacity duration-300 ${openDropdown === index ? "opacity-100 block" : "opacity-0 hidden"}`}
+                                            className={`absolute bg-white text-black border border-gray-700 mt-4 shadow-md py-2 w-48 z-10 transition-opacity duration-300 ${openDropdown === index ? "opacity-100 block" : "opacity-0 hidden"
+                                                }`}
                                         >
                                             {category.items.map((item) => (
                                                 <li key={item}>
-                                                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                                                    <a
+                                                        href="#"
+                                                        className="block px-4 py-2 hover:bg-gray-100"
+                                                    >
                                                         {item}
                                                     </a>
                                                 </li>
@@ -155,7 +145,7 @@ const Navbar = () => {
                     </div>
                 )}
 
-                {/* Separate Mobile Menu */}
+                {/* Mobile Menu */}
                 {menuOpen && (
                     <div className="flex w-full flex-col">
                         <div className="flex items-center">
@@ -171,24 +161,53 @@ const Navbar = () => {
                         </div>
 
                         <ul className="block lg:hidden w-full text-white">
-                            {categories.map((category) => (
-                                <li key={category.name} className="py-3 text-xs border-b border-gray-500 md:text-sm group relative">
-                                    <button className="flex items-center space-x-1 py-2">
+                            {categories.map((category, index) => (
+                                <li
+                                    key={category.name}
+                                    className="text-xs md:text-sm my-3 border-b  group relative"
+                                    onMouseEnter={() => handleMouseEnter(index)}
+
+                                >
+                                    <button
+                                        className="flex items-center space-x-1 py-2"
+                                        onClick={() =>
+                                            setOpenDropdown(openDropdown === index ? null : index)
+                                        }
+                                    >
                                         <span className="relative">
                                             {category.name}
-                                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--lilypad-primary)] transition-all group-hover:w-full"></span>
+                                            {category.items.length > 0 && (
+                                                <span className="absolute -bottom-1 left-0 w-full hidden h-0.5 bg-cyan transition-all group-hover:block"></span>
+                                            )}
                                         </span>
-                                        <ChevronDown className="h-4 w-4" />
+                                        {category.items.length > 0 && (
+                                            <div className="relative">
+                                                <ChevronDown
+                                                    className={`h-4 w-4 transform transition-transform duration-300 ${openDropdown === index ? "rotate-180" : "rotate-0"
+                                                        }`}
+                                                />
+                                            </div>
+                                        )}
                                     </button>
-                                    <ul className="absolute hidden group-hover:block bg-white text-black border border-gray-700 mt-2 py-2 w-48 z-10">
-                                        {category.items.map((item) => (
-                                            <li key={item}>
-                                                <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                                    {item}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
+
+                                    {/* Dropdown Menu */}
+                                    {category.items.length > 0 && (
+                                        <ul
+                                            className={`absolute  right-0   bg-white text-black border border-gray-700 mt-4 shadow-md py-2  w-52 z-10 transition-opacity duration-300 ${openDropdown === index ? "opacity-100 block" : "opacity-0 hidden"
+                                                }`}
+                                        >
+                                            {category.items.map((item) => (
+                                                <li key={item}>
+                                                    <Link
+                                                        to={'/'}
+                                                        className="block px-4 py-2 hover:bg-gray-100"
+                                                    >
+                                                        {item}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -202,9 +221,15 @@ const Navbar = () => {
                         <User className="h-5 w-5" />
                         <ShoppingCartIcon className="h-5 w-5" />
                         {darkMode ? (
-                            < SunMoon className="h-6 w-6 text-yellow-400" onClick={() => setDarkMode(!darkMode)} />
+                            <SunMoon
+                                className="h-6 w-6 text-yellow-400 cursor-pointer"
+                                onClick={() => setDarkMode(!darkMode)}
+                            />
                         ) : (
-                            < Sun className="h-6 w-6  " onClick={() => setDarkMode(!darkMode)} />
+                            <Sun
+                                className="h-6 w-6 cursor-pointer"
+                                onClick={() => setDarkMode(!darkMode)}
+                            />
                         )}
                     </div>
                 )}
@@ -220,7 +245,6 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-
     );
 };
 

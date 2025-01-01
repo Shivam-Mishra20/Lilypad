@@ -73,24 +73,10 @@
 }
 
 /* Base Styles */
-@layer base {
-  * {
-    @apply border-border;
-    /* Apply border color from Tailwind configuration */
-  }
 
-  body {
-    @apply bg-background text-foreground;
-    /* Apply background and text color from CSS variables */
-    font-family: "Raleway", sans-serif;
-    /* Apply Raleway font */
-  }
-
-  /* Additional global styles */
-  .dark body {
-    background-color: var(--background);
-    /* Dark mode background */
-    color: var(--foreground);
-    /* Dark mode text */
-  }
+body {
+  font-family: "Raleway", sans-serif;
+  /* Apply Raleway font */
 }
+
+/* Additional global styles */

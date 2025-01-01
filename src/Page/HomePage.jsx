@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'; // Importing Framer Motion
 
-import { slides, Brands, category, faqData } from "../Data/Data";
-
-
+import { slides, Brands, category, faqData, PriceRange } from "../Data/Data";
 
 import Services from '../components/Layout/Services';
 
@@ -10,12 +8,12 @@ import TrendingProducts from '../components/TrendingProduct/TrendingProducts';
 import Carousel from '../components/Layout/Carousel';
 import FilterBy from '../components/FilterBy/FilterBy';
 import Layout from '../components/Layout/Layout';
-import ProductGrid from '../components/ProductsSec/ProductGrid';
+
 import Blog_Sec from '../components/BlogsSec/Blog_Sec';
 import FaqSec from '@/components/Faq/FaqSec';
-import TribeVideo from '@/components/TribeVideoSec/VideoCard';
-import TribeSec from '@/components/TribeVideoSec/TribeSec';
+
 import { FooterBottom } from '@/components/FooterMobileMenu/FooterBotom';
+import FilterByPrice from '@/components/FilterBy/FilterByPrice';
 
 
 
@@ -43,7 +41,7 @@ const HomePage = () => {
         <Layout>
             {/* Slider */}
             <Section>
-                <Carousel slides={slides} />
+                <Carousel />
             </Section>
 
             {/* Services */}
@@ -51,26 +49,20 @@ const HomePage = () => {
                 <Services />
             </Section>
 
-
-
-            {/*  Brands */}
+            {/*  filter  by */}
             <Section>
                 <FilterBy data={Brands} title="Filter By Brands" hidden="hidden" />
+            </Section>
+            <Section>
+                <FilterBy data={category} title="Filter By Category" />
+            </Section>
+            <Section>
+                <FilterByPrice data={PriceRange} title="Filter By Price" />
             </Section>
 
             {/* Trending sec*/}
             <Section>
                 <TrendingProducts />
-            </Section>
-
-            {/* videos sec*/}
-            <Section>
-                <TribeSec />
-            </Section>
-
-            {/* Productcard sec */}
-            <Section>
-                <ProductGrid />
             </Section>
 
             {/* Faq sec*/}
@@ -83,6 +75,8 @@ const HomePage = () => {
             <Section>
                 <  Blog_Sec />
             </Section>
+
+            {/*  bottom foooter for mobile */}
 
             <Section>
                 <FooterBottom />

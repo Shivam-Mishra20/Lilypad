@@ -15,7 +15,7 @@ export function FooterBottom() {
     ];
 
     return (
-        <nav className="sm:hidden fixed bottom-0   z-50 left-0 right-0 bg-background shadow-lg border-t-2 border-gray">
+        <nav className="sm:hidden fixed bottom-0   z-50 left-0 right-0   bg-white  dark:bg-black dark:text-white text-black  shadow-lg border-t-2 border-gray">
             <div className="flex justify-around  ">
                 {navigation.map((item) => {
                     const Icon = item.icon;

@@ -216,18 +216,22 @@ export const Brands = [
     {
         name: "HERALDEBIKE",
         image: "/img/brand logos/logo11.png",
+
     },
     {
         name: "Electric City Bike",
         image: "/img/brand logos/logo2.jpg",
+
     },
     {
         name: "Folding Electric Bike",
         image: "/img/brand logos/logo3.jpeg",
+
     },
     {
         name: "Electric Hoverboard",
         image: "/img/brand logos/logo4.png",
+
     },
     {
         name: "Electric Scooter",
@@ -266,16 +270,19 @@ export const category = [
         name: "Electric Bicycle",
         image: "/img/Bike/cycc.webp ",
 
+
     }
     ,
     {
         name: "Electric Bike",
         image: "/img/Bike/bike4.webp",
+
     }
     ,
     {
         name: "High-Speed Scooter",
         image: "/img/Bike/scooty.webp",
+
     }
     ,
     {
@@ -305,67 +312,104 @@ export const category = [
 ]
 
 
-export const Trendingitem = [
+export const PriceRange = [
+    { min: 0, max: 20000 },
+    { min: 20000, max: 40000 },
+    { min: 40000, max: 60000 },
+    { min: 60000, max: 80000 },
+    { min: 80000, max: 100000 },
+    { min: 100000, max: 120000 },
+    { min: 120000, max: 140000 },
+    { min: 140000, max: 160000 },
+];
 
+export const Trendingitem = [
     {
         id: 1,
         category: 'Electric Bike',
-        name: 'Kids Electric Bike Bulk 10 Pack Multi Colored For Students',
-        availability: 70,
-        price: 1000.00,
-        image: "/img/Bike/blacks.webp",
+        name: 'Electric Bike Bulk',
+        price: 1000.0,
+        image: "/img/Bike/royal prime (1).webp",
+        features: {
+            range: '150 km',
+            topSpeed: '85 km/h',
+            chargingTime: '4 hours',
+        },
     },
     {
         id: 2,
         category: 'Electric Bike',
-        name: 'Professional Electric Scooter',
-        availability: 45,
-        price: 500.00,
-        image: "/img/Bike/bike2.jpg",
+        name: 'Electric Scooter',
+        price: 500.0,
+        image: "/img/Bike/bike3.webp",
+        features: {
+            range: '120 km',
+            topSpeed: '75 km/h',
+            chargingTime: '3.5 hours',
+        },
     },
     {
         id: 3,
         category: 'Hoverboard',
-        name: 'Bang & Olufsen Beoplay H9i Wireless Hoverboard',
-        availability: 100,
-        price: 602.00,
+        name: 'Wireless Hoverboard',
+        price: 602.0,
         image: "/img/Bike/reds.webp",
+        features: {
+            range: '90 km',
+            topSpeed: '60 km/h',
+            chargingTime: '2 hours',
+        },
     },
     {
         id: 4,
         category: 'Electric Scooter',
-        name: 'Electric Scooter With Advanced Speed Control and Health Monitoring',
-        availability: 25,
-        price: 602.00,
+        name: 'Electric Scooter',
+        price: 602.0,
         image: "/img/Bike/bike6.webp",
+        features: {
+            range: '130 km',
+            topSpeed: '80 km/h',
+            chargingTime: '4 hours',
+        },
     },
     {
         id: 5,
         category: 'Hoverboard',
-        name: 'APPLE Hoverboard Series 2 – 42 Mm Stainless Steel Frame',
-        availability: 50,
-        price: 1202.00,
+        name: 'APPLE Hoverboard',
+        price: 1202.0,
         image: "/img/Bike/cycc.webp",
+        features: {
+            range: '100 km',
+            topSpeed: '65 km/h',
+            chargingTime: '3 hours',
+        },
     },
     {
         id: 6,
         category: 'Electric Bike',
-        name: 'High-Speed Electric Bike for Students',
-        availability: 60,
-        price: 1100.00,
+        name: 'High-Speed Electric',
+        price: 1100.0,
         image: "/img/Bike/blacks.webp",
+        features: {
+            range: '160 km',
+            topSpeed: '90 km/h',
+            chargingTime: '5 hours',
+        },
     },
     {
         id: 7,
         category: 'Electric Bike',
         name: 'Compact Electric Scooter',
-        availability: 35,
-        price: 450.00,
+        price: 450.0,
         image: "/img/Bike/bike2.jpg",
+        features: {
+            range: '110 km',
+            topSpeed: '70 km/h',
+            chargingTime: '3 hours',
+        },
     },
-
-
 ];
+
 
 
 

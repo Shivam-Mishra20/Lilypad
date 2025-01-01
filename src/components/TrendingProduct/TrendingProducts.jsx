@@ -25,8 +25,8 @@ const TrendingProducts = () => {
     };
 
     return (
-        <div className=" dark:bg-black dark:text-lightCyan bg-[#F5F5F5]    rounded-sm">
-            <div className="w-full max-w-7xl mx-auto p-2 sm:p-6">
+        <div className=" dark:bg-gray-800 dark:text-lightCyan bg-[#F5F5F5]  mx-10 md:mx-10     rounded-md">
+            <div className=" w-full  container   max-w-7xl mx-auto p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-8">
                     <div className="flex gap-5">
                         <span className="text-sm  hidden sm:inline  md:text-2xl text-cyan  font-bold">
@@ -56,14 +56,14 @@ const TrendingProducts = () => {
                     <div className="flex items-center">
                         <div className="flex gap-2">
                             <button
-                                className="text-black bg-white rounded-full p-4 shadow-lg"
+                                className="text-black bg-white rounded-full p-2 sm:p-4 shadow-lg"
                                 onClick={previousSlide}
                                 disabled={startIndex === 0}
                             >
                                 <ChevronLeft className="h-4 w-4" />
                             </button>
                             <button
-                                className="text-black bg-white rounded-full p-4 shadow-lg"
+                                className="text-black bg-white rounded-full p-2 sm:p-4 shadow-lg"
                                 onClick={nextSlide}
                                 disabled={startIndex >= products.length - productsToShow}
                             >

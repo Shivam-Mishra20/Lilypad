@@ -4,9 +4,8 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Link } from "react-router-dom";
 
-const SwiperWithItems = ({ data, hidden }) => {
+const SwiperWithPrice = ({ data, hidden }) => {
     const showNavigation = data.length > 8;
 
     return (
@@ -28,27 +27,22 @@ const SwiperWithItems = ({ data, hidden }) => {
         >
             {data.map((item, index) => (
                 <SwiperSlide key={item.id || index}>
-
-                    <div className="my-8 flex items-center  flex-col  w-full mx-auto  ">
+                    <div className="my-8 flex items-center  justify-center  w-full mx-auto  ">
                         <div className="p-4 w-[80px] h-[80px] sm:w-[119px] text-center sm:h-[119px] dark:bg-gray-800 bg-[#F7F7F7]  align-super shadow-md rounded-lg flex items-center justify-center mb-2 group">
+                            <div className="text-black dark:text-white flex flex-col items-center justify-center">
+                                <span className="font-bold text-lg sm:text-xl">{item.min}</span>
+                                <span>▶</span>
+                                <span className="font-semibold text-md sm:text-lg opacity-80">{item.max}</span>
+                            </div>
 
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                                className="w-full h-full object-contain transform transition-transform duration-300 ease-in-out group-hover:scale-110"
-                            />
+
                         </div>
-                        <div className={` text-center ${hidden}`}>
-                            <h6 className=" dark:text-white text-[0.6rem] sm:text-[0.8rem] text-nowrap  font-raleway font-normal text-darkGray">
-                                {item.name}
-                            </h6>
-                        </div>
+
                     </div>
-
                 </SwiperSlide>
             ))}
         </Swiper>
     );
 };
 
-export default SwiperWithItems;
+export default SwiperWithPrice;
