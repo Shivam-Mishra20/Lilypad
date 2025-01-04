@@ -21,36 +21,38 @@ const Blog_Sec = () => {
     };
 
     return (
-        <div className="container mx-auto  bg-bgGray  dark:bg-black  px-10   py-8">
-            <div className='flex items-center  justify-between w-full'>
-                <h2 className="text-xl sm:text-2xl font-bold dark:text-cyan  text-black  font-raleway  ">From The Blogs</h2>
-                <div className="flex  gap-2">
-                    <button
-                        className="text-black cursor-pointer bg-white rounded-full p-4 shadow-lg"
-                        onClick={previousSlide}
-                        disabled={startIndex === 0}
-                    >
-                        <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button
-                        className="text-black cursor-pointer bg-white rounded-full p-4 shadow-lg"
-                        onClick={nextSlide}
-                        disabled={startIndex >= blogPosts.length - productsToShow}
-                    >
-                        <ChevronRight className="h-4 w-4" />
-                    </button>
+        <section className=" dark:bg-black dark:text-lightCyan bg-bgGray     ">
+            <div className="container mx-auto   px-10   py-8">
+                <div className='flex items-center  justify-between w-full'>
+                    <h2 className="text-xl sm:text-2xl font-bold dark:text-cyan  text-black  font-raleway  ">From The Blogs</h2>
+                    <div className="flex  gap-2">
+                        <button
+                            className="text-black cursor-pointer bg-white rounded-full p-4 shadow-lg"
+                            onClick={previousSlide}
+                            disabled={startIndex === 0}
+                        >
+                            <ChevronLeft className="h-4 w-4" />
+                        </button>
+                        <button
+                            className="text-black cursor-pointer bg-white rounded-full p-4 shadow-lg"
+                            onClick={nextSlide}
+                            disabled={startIndex >= blogPosts.length - productsToShow}
+                        >
+                            <ChevronRight className="h-4 w-4" />
+                        </button>
+                    </div>
+                </div>
+                <hr class="border dark:border-white my-4 border-black  min-w-full  mx-auto" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-4 gap-6">
+
+                    {blogPosts.slice(startIndex, startIndex + productsToShow).map((post) => (
+                        <BlogCard key={post.id} post={post} />
+                    ))}
+
                 </div>
             </div>
-            <hr className='mt-4' />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-4 gap-6">
-
-                {blogPosts.slice(startIndex, startIndex + productsToShow).map((post) => (
-                    <BlogCard key={post.id} post={post} />
-                ))}
-
-            </div>
-        </div>
+        </section>
     );
 };
 

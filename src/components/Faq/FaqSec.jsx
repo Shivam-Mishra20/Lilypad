@@ -30,7 +30,9 @@ const FaqSec = () => {
                         </AccordionItem>
                     ))}
                 </Accordion>
+
             </div>
+
         </div>
     )
 }

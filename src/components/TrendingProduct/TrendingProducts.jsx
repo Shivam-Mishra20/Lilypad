@@ -32,9 +32,9 @@ const TrendingProducts = () => {
                         <span className="text-sm  hidden sm:inline  md:text-2xl text-cyan  font-bold">
                             Our Trending Products
                         </span>
-                        <div className="flex gap-6">
+                        <div className="flex  gap-6">
                             <button
-                                className={`text-sm dark:text-lightCyan md:text-lg ${activeTab === "new"
+                                className={`text-sm dark:text-white md:text-lg ${activeTab === "new"
                                     ? "text-black border-b-2 border-[var(--lilypad-primary)]"
                                     : "text-gray-600"
                                     }`}
@@ -43,7 +43,7 @@ const TrendingProducts = () => {
                                 New Products
                             </button>
                             <button
-                                className={`text-sm dark:text-lightCyan md:text-lg ${activeTab === "best"
+                                className={`text-sm dark:text-white md:text-lg ${activeTab === "best"
                                     ? "text-black border-b-2 border-[var(--lilypad-primary)]"
                                     : "text-gray-600"
                                     }`}
