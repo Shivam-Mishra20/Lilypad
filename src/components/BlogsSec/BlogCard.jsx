@@ -1,5 +1,5 @@
 const BlogCard = ({ post }) => (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col font-inter h-full">
         <div className="relative group">
             <img
                 src={post.imageUrl}

@@ -8,16 +8,12 @@ import {
     AlignJustify,
     SunMoon,
     Sun,
-    ChevronUp,
+
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import "../../App.css";
+import { useTheme } from "@/Context/ThemeContext";
+
+
 
 const categories = [
     {
@@ -45,14 +41,9 @@ const categories = [
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isFixed, setIsFixed] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+    const { darkMode, setDarkMode } = useTheme();
     const [openDropdown, setOpenDropdown] = useState(null);
 
-    useEffect(() => {
-        const theme = darkMode ? "dark" : "light";
-        document.documentElement.classList.toggle("dark", darkMode);
-        localStorage.setItem("theme", theme);
-    }, [darkMode]);
 
     useEffect(() => {
         const handleScroll = () => setIsFixed(window.scrollY > 0);
@@ -73,7 +64,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`w-full bg-[#1D1E18] text-white px-4 lg:px-4 py-4 ${isFixed ? "fixed top-0 left-0 z-50 shadow-md" : ""
+            className={`w-full bg-[#1D1E18] text-white px-4 lg:px-2 py-4 ${isFixed ? "fixed top-0 left-0 z-50 shadow-md" : ""
                 }`}
         >
             <div className="flex items-center justify-between">
@@ -239,7 +230,7 @@ const Navbar = () => {
                     <input
                         type="search"
                         placeholder="Search Product Here..."
-                        className="w-full bg-white text-black pl-4 pr-10 py-2 rounded-full"
+                        className="w-full bg-white dark:bg-black dark:border-white dark:border dark:text-white text-black pl-4 pr-10 py-2 rounded-full"
                     />
                     <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
                 </div>

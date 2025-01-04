@@ -1,12 +1,12 @@
 import React from "react";
-import { Heart, Repeat, Star, Box } from "lucide-react";
+import { Star } from "lucide-react";
 
 const TrendingCard = ({ product }) => {
     return (
-        <div className="relative dark:bg-black   dark:text-white transform transition-transform duration-300 hover:translate-y-2 shadow-xl border rounded-lg overflow-hidden">
+        <div className="relative dark:bg-black px-4  min-w-[210px]  dark:text-white transform transition-transform duration-300 hover:translate-y-2 shadow-xl border rounded-lg overflow-hidden">
 
-            <div className="p-2 sm:p-4 ">
-                <div className="aspect-square  p-6 mb-4">
+            <div className="   py-4  ">
+                <div className="aspect-square p-6 mb-4">
                     <img
                         src={product.image}
                         alt={product.name}
@@ -27,7 +27,7 @@ const TrendingCard = ({ product }) => {
                             <Star className="h-3 fill-yellow-300 w-4" />
 
                         </div>
-                        <h3 className="font-medium leading-tight line-clamp-2">{product.name}</h3>
+                        <h3 className="font-medium text-sm text-nowrap leading-tight line-clamp-2">{product.name}</h3>
 
 
                     </div>
@@ -36,21 +36,21 @@ const TrendingCard = ({ product }) => {
                         <p className="font-bold">${product.price.toFixed(2)}</p>
                         <p className=" font-light  text-gray-600  line-through ">${product.price.toFixed(2)}</p>
                     </div>
+                    <hr class="border dark:border-white border-black  w-full  mx-auto" />
 
-                    <hr />
-                    <div className="my-4 p-2">
+                    <div className="my-4 ">
                         <div className="flex items-center justify-between gap-4 text-center">
                             <div className="flex items-center justify-center flex-col">
                                 <h4 className="font-bold text-lg dark:text-white">{product.features.range}</h4>
-                                <p className="text-sm dark:text-gray-300">Range</p>
+                                <p className=" font-semibold text-sm dark:text-gray-300">Range</p>
                             </div>
                             <div className="flex items-center justify-center flex-col">
                                 <h4 className="font-bold text-lg dark:text-white">{product.features.topSpeed}</h4>
-                                <p className="text-sm dark:text-gray-300">Top Speed</p>
+                                <p className=" font-semibold text-sm text-nowrap dark:text-gray-300">Top Speed</p>
                             </div>
                             <div className="flex items-center justify-center flex-col">
                                 <h4 className="font-bold text-lg dark:text-white">{product.features.chargingTime}</h4>
-                                <p className="text-sm dark:text-gray-300">Charging  </p>
+                                <p className=" font-semibold text-sm dark:text-gray-300">Charging </p>
                             </div>
                         </div>
                     </div>

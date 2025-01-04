@@ -4,7 +4,7 @@ import { Home, LayoutGrid, Gift, Pen, MessageCircle } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 export function FooterBottom() {
-    const location = useLocation();
+
 
     const navigation = [
         { name: 'Home', href: '/', icon: Home },
@@ -30,7 +30,7 @@ export function FooterBottom() {
                         >
                             <Icon
                                 className={cn(
-                                    "w-6 h-6 relative transition-colors group-hover:text-cyan",
+                                    "w-6 h-6 relative  font-mono transition-colors group-hover:text-cyan",
 
                                 )}
                             />

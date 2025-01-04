@@ -1,19 +1,16 @@
 import { motion } from 'framer-motion'; // Importing Framer Motion
-
-import { slides, Brands, category, faqData, PriceRange } from "../Data/Data";
-
-import Services from '../components/Layout/Services';
-
-import TrendingProducts from '../components/TrendingProduct/TrendingProducts';
-import Carousel from '../components/Layout/Carousel';
-import FilterBy from '../components/FilterBy/FilterBy';
-import Layout from '../components/Layout/Layout';
-
-import Blog_Sec from '../components/BlogsSec/Blog_Sec';
-import FaqSec from '@/components/Faq/FaqSec';
-
 import { FooterBottom } from '@/components/FooterMobileMenu/FooterBotom';
 import FilterByPrice from '@/components/FilterBy/FilterByPrice';
+import FilterByCategory from '@/components/FilterBy/FilterByCategory';
+import Carousel from '@/components/Layout/Carousel';
+import Services from '@/components/Layout/Services';
+import TrendingProducts from '@/components/TrendingProduct/TrendingProducts';
+import FaqSec from '@/components/Faq/FaqSec';
+import Blog_Sec from '@/components/BlogsSec/Blog_Sec';
+import Layout from '@/components/Layout/Layout';
+import FilterByBrands from '@/components/FilterBy/FilterByBrands';
+import { faqData } from '@/Data/Data';
+;
 
 
 
@@ -51,13 +48,13 @@ const HomePage = () => {
 
             {/*  filter  by */}
             <Section>
-                <FilterBy data={Brands} title="Filter By Brands" hidden="hidden" />
+                <FilterByBrands />
             </Section>
             <Section>
-                <FilterBy data={category} title="Filter By Category" />
+                <FilterByCategory />
             </Section>
             <Section>
-                <FilterByPrice data={PriceRange} title="Filter By Price" />
+                <FilterByPrice />
             </Section>
 
             {/* Trending sec*/}

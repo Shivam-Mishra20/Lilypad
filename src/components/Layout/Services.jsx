@@ -33,7 +33,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className="flex items-center gap-4 p-4">
+        <div className="flex items-center  gap-4 p-4">
             <div className="w-12 h-12">
                 <div
                     className={`w-full h-full transition-transform duration-300 transform ${isHovered ? 'rotate-[360deg]' : ''
@@ -47,10 +47,10 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
                 </div>
             </div>
             <div>
-                <h3 className="font-raleway font-semibold dark:text-white text-lg">
+                <h3 className="font-raleway font-semibold dark:text-white text-[1rem]">
                     {title}
                 </h3>
-                <p className="text-sm dark:text-cyan text-gray-600">{description}</p>
+                <p className="text-[0.8rem] dark:text-cyan text-gray-600">{description}</p>
             </div>
         </div>
     );
@@ -58,7 +58,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
 
 export const Services = () => {
     return (
-        <div className="w-full dark:bg-gray-800 bg-gray-100 overflow-hidden">
+        <div className="w-full dark:bg-gray-950 bg-bgGray overflow-hidden">
             <div className="relative flex items-center">
                 <div className="flex gap-8 animate-marquee">
                     {services.map((feature, index) => (

@@ -2,36 +2,17 @@ import { useEffect, useState } from 'react';
 
 import { ChevronDown, ShoppingCartIcon, Sun, SunMoon, } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '@/Context/ThemeContext';
 
 const Navtop = () => {
-    const [darkMode, setDarkMode] = useState(false);
+
+    const { darkMode, setDarkMode } = useTheme();
 
 
-    useEffect(() => {
-        // Check if the user prefers dark mode
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setDarkMode(savedTheme === 'dark');
-        } else {
-            // Check user's system preference
-            setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-        }
-    }, []);
 
-
-    useEffect(() => {
-        // Toggle the dark class based on state
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    }, [darkMode]);
 
     return (
-        <div className="w-full bg-[#1D1E18] border-b hidden sm:block    pb-1 text-white  py-2">
+        <div className="w-full bg-[#1D1E18] border-b hidden sm:block  px-2  pb-1 text-white  py-2">
             <div className="  w-full   flex items-center justify-between text-sm">
                 <div className=" hidden md:flex items-center  gap-4">
                     <div className="flex items-center gap-1">
@@ -58,7 +39,7 @@ const Navtop = () => {
                     <Link className=' border-x px-2 ' href="/compare">Compare</Link>
                     <Link href="/cart" className="flex   px-2 items-center gap-1">
                         <ShoppingCartIcon className="h-4 w-4" />
-                        Cart (0)
+                        Cart
                     </Link>
                 </div>
             </div>

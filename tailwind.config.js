@@ -6,12 +6,13 @@ export default {
 	content: [
 		"./index.html",
 		"./src/**/*.{js,ts,jsx,tsx}",
-		'./components/ui/**/*.{js,ts,jsx,tsx}', // Include shadcn components
+		'./components/ui/**/*.{js,ts,jsx,tsx}', //   shadcn components
 	],
 	theme: {
 		extend: {
 			colors: {
-				lightCyan: '#BCFFFF',
+				bgGray: ' #F4F4F4',
+				lightCyan: '#B0FFFF',
 				cyan: '#00FFFF',
 				darkGray: '#1A1A1A',
 				black: '#000000',
@@ -22,6 +23,7 @@ export default {
 			fontFamily: {
 				raleway: [
 					'Raleway"',
+					'inter',
 					'sans-serif'
 				]
 			},

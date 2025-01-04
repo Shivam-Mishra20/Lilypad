@@ -220,12 +220,12 @@ export const Brands = [
     },
     {
         name: "Electric City Bike",
-        image: "/img/brand logos/logo2.jpg",
+        image: "/img/brand logos/logo2.png",
 
     },
     {
         name: "Folding Electric Bike",
-        image: "/img/brand logos/logo3.jpeg",
+        image: "/img/brand logos/logo3.png",
 
     },
     {
@@ -235,7 +235,7 @@ export const Brands = [
     },
     {
         name: "Electric Scooter",
-        image: "/img/brand logos/logo5.jpg",
+        image: "/img/brand logos/logo5.png",
     },
     {
         name: "Hybrid Electric Bike",
@@ -246,9 +246,10 @@ export const Brands = [
         image: "/img/brand logos/logo7.png",
     },
     {
-        name: "Electric Road Bike",
-        image: "/img/brand logos/logo8.jpg",
+        name: "Electric Cargo Bike",
+        image: "/img/brand logos/Virtus Logo Dark.png",
     },
+
     {
         name: "Electric Sports Bike",
         image: "/img/brand logos/logo9.png",
@@ -268,36 +269,40 @@ export const Brands = [
 export const category = [
     {
         name: "Electric Bicycle",
-        image: "/img/Bike/cycc.webp ",
+        image: "/img/BikeIcons/evcyc.png",
 
 
     }
     ,
     {
         name: "Electric Bike",
-        image: "/img/Bike/bike4.webp",
+        image: "/img/BikeIcons/motorbike (1).png",
 
     }
     ,
     {
         name: "High-Speed Scooter",
-        image: "/img/Bike/scooty.webp",
+        image: "/img/BikeIcons/evsc.png",
 
     }
     ,
     {
         name: "Kickscooter",
-        image: "/img/Bike/0I0A4071 copy.webp",
+        image: "/img/BikeIcons/kicksc.png",
     }
     ,
     {
         name: "Low-Speed Scooter",
-        image: "/img/Bike/evolet_pony_sideview.webp",
+        image: "/img/BikeIcons/scooter.png",
     }
     ,
     {
         name: "Segway",
-        image: "/img/Bike/HOVER.webp",
+        image: "/img/BikeIcons/segway.png",
+    },
+    {
+        name: "accessories",
+        image: "/img/BikeIcons/helmet.png",
     }
     ,
 
@@ -313,7 +318,7 @@ export const category = [
 
 
 export const PriceRange = [
-    { min: 0, max: 20000 },
+
     { min: 20000, max: 40000 },
     { min: 40000, max: 60000 },
     { min: 60000, max: 80000 },
@@ -425,7 +430,7 @@ export const blogPosts = [
     {
         id: 2,
         date: "17  Dec 2024",
-        title: "EV Bikes: The Future of   Transportation",
+        title: "EV Bikes: The Future  ",
         excerpt: "Discover the benefits of switching to electric bikes, from reducing carbon footprints to cutting down on traffic congestion. The future of transport is electric!",
         imageUrl: "/img/Bike/0I0A4071 copy.webp"
     },

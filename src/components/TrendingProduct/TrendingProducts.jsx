@@ -25,9 +25,9 @@ const TrendingProducts = () => {
     };
 
     return (
-        <div className=" dark:bg-gray-800 dark:text-lightCyan bg-[#F5F5F5]  mx-10 md:mx-10     rounded-md">
-            <div className=" w-full  container   max-w-7xl mx-auto p-4 sm:p-6">
-                <div className="flex items-center justify-between mb-8">
+        <div className=" dark:bg-black dark:text-lightCyan bg-bgGray    rounded-md">
+            <div className=" w-full  container     mx-auto px-10 ">
+                <div className="flex items-center justify-between   mb-6">
                     <div className="flex gap-5">
                         <span className="text-sm  hidden sm:inline  md:text-2xl text-cyan  font-bold">
                             Our Trending Products
@@ -53,7 +53,7 @@ const TrendingProducts = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ">
                         <div className="flex gap-2">
                             <button
                                 className="text-black bg-white rounded-full p-2 sm:p-4 shadow-lg"
@@ -72,7 +72,11 @@ const TrendingProducts = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+
+
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4    gap-2  mt-6">
                     {products.slice(startIndex, startIndex + productsToShow).map((product) => (
                         <TrendingCard key={product.id} product={product} />
                     ))}

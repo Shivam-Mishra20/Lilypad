@@ -37,7 +37,7 @@ const Carousel = () => {
                 autoplay={{
                     delay: 5000,
                 }}
-                speed={600} // Smooth transition  
+                speed={700} // Smooth transition  
                 className="h-full"
             >
                 {slides.map((slide, index) => (
@@ -59,10 +59,10 @@ const Carousel = () => {
                                 className="text-start space-y-2 sm:space-y-4"
                                 variants={textVariants}
                             >
-                                <h1 className="text-xl text-nowrap text-cyan font-bold sm:text-2xl lg:text-6xl">
+                                <h1 className="text-xl text-nowrap text-cyan font-bold sm:text-2xl lg:text-5xl">
                                     {slide.title}
                                 </h1>
-                                <p className="text-xl font-normal hidden sm:block my-2 md:text-sm lg:text-2xl">
+                                <p className="text-xl font-normal hidden sm:block my-2 md:text-sm lg:text-xl">
                                     {slide.description}
                                     <span className="block text-4xl font-bold">{slide.price}</span>
                                 </p>
@@ -71,7 +71,7 @@ const Carousel = () => {
                                     <button className="bg-cyan text-white font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">
                                         Buy Now
                                     </button>
-                                    <button className="underline hidden sm:block px-6 py-2 hover:bg-gray-100 transition-colors">
+                                    <button className="underline hidden sm:block px-6 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                                         Learn More
                                     </button>
                                 </div>
@@ -84,7 +84,7 @@ const Carousel = () => {
 
                                     src={slide.image}
                                     alt="Electronic devices showcase"
-                                    className="h-[144px] sm:h-[250px] md:h-[300px] w-auto object-contain"
+                                    className="h-[144px] sm:h-[250px] md:h-[300px] w-auto sm:max-w-[250px] object-contain"
                                 />
                             </motion.div>
                         </motion.div>
