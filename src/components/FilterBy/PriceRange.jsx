@@ -59,7 +59,7 @@ const PriceRange = () => {
                     </div>
 
                     {/* Slider with labels */}
-                    <div className="relative  font-serif  pt-6">
+                    <div className="relative   pt-6">
                         <div className="absolute -top-1 left-0 -translate-x-1/2 bg-gray-900 text-white px-2 py-1 rounded text-sm">
                             ₹{range[0].toLocaleString()}
                         </div>
