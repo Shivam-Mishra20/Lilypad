@@ -18,7 +18,7 @@ const BlogCard = ({ post }) => (
             <p className="text-gray-600 dark:text-white  text-justify ">{post.excerpt}</p>
         </div>
         <div>
-            <button className="px-6 mt-2 py-2 text-black bg-cyan hover:text-white dark:bg-cyan rounded-full explore-button dark:hover:bg-cyan  hover:bg-black">Read More</button>
+            <button className="px-6 mt-2 py-2 text-black bg-lightgray hover:text-white dark:bg-cyan rounded-full explore-button dark:hover:bg-cyan   hover:bg-black">Read More</button>
         </div>
     </div>
 );

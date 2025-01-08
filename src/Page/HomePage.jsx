@@ -2,23 +2,20 @@ import { motion } from 'framer-motion'; // Importing Framer Motion
 import { FooterBottom } from '@/components/FooterMobileMenu/FooterBotom';
 import FilterByPrice from '@/components/FilterBy/FilterByPrice';
 import FilterByCategory from '@/components/FilterBy/FilterByCategory';
-import Carousel from '@/components/Layout/Carousel';
-import Services from '@/components/Layout/Services';
+import Carousel from '@/components/ui/Carousel';
+import Services from '@/components/ui/Services';
 import TrendingProducts from '@/components/TrendingProduct/TrendingProducts';
 import FaqSec from '@/components/Faq/FaqSec';
 import Blog_Sec from '@/components/BlogsSec/Blog_Sec';
 import Layout from '@/components/Layout/Layout';
 import FilterByBrands from '@/components/FilterBy/FilterByBrands';
 import { faqData } from '@/Data/Data';
-;
-
-
 
 // motion fadeing 
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeInOut" } }
 };
 
 //use some motion for animateing 
@@ -49,11 +46,10 @@ const HomePage = () => {
             {/*  filter  by */}
             <Section>
                 <FilterByBrands />
-            </Section>
-            <Section>
                 <FilterByCategory />
-            </Section>
-            <Section>
+
+
+
                 <FilterByPrice />
             </Section>
 
@@ -70,7 +66,7 @@ const HomePage = () => {
 
             {/* Blogs sec */}
             <Section>
-                <  Blog_Sec />
+                < Blog_Sec />
             </Section>
 
             {/*  bottom foooter for mobile */}

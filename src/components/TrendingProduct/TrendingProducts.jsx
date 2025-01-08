@@ -29,7 +29,7 @@ const TrendingProducts = () => {
             <div className=" w-full  container     mx-auto px-10 ">
                 <div className="flex items-center justify-between   mb-6">
                     <div className="flex gap-5">
-                        <span className="text-sm  hidden sm:inline  md:text-2xl text-cyan  font-bold">
+                        <span className="text-sm  hidden sm:inline  md:text-2xl text-lightgray dark:text-cyan  font-bold">
                             Our Trending Products
                         </span>
                         <div className="flex  gap-6">
@@ -76,7 +76,7 @@ const TrendingProducts = () => {
 
 
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4    gap-2  mt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4    gap-4 sm:gap-2  mt-6">
                     {products.slice(startIndex, startIndex + productsToShow).map((product) => (
                         <TrendingCard key={product.id} product={product} />
                     ))}

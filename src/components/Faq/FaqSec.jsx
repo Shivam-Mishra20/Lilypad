@@ -15,7 +15,7 @@ const FaqSec = () => {
 
 
             <div className=" w-full  sm:container font-raleway        mx-auto px-10 py-16">
-                <h1 className="text-[32px]  dark:text-white text-black font-semibold text-center mb-12">
+                <h1 className="text-[32px]  dark:text-white text-lightgray font-semibold text-center mb-12">
                     Frequently Asked Questions
                 </h1>
                 <Accordion type="single" collapsible className="w-full">

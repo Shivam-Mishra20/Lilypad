@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Import Inter Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 /* Tailwind Directives */
 @tailwind base;
@@ -14,16 +14,10 @@
   background: black;
 }
 
-/* Custom Layer for Tailwind CSS */
 @layer base {
-
-  /* Define Root Variables for Light Mode */
   :root {
-
     --radius: 0.5rem;
   }
-
-
 }
 
 /* Base Styles */
@@ -31,10 +25,3 @@ body {
   font-family: "Raleway", sans-serif;
   /* Default to Raleway */
 }
-
-/* Apply Inter font for specific elements */
-.inter-font {
-  font-family: "Inter", sans-serif;
-}
-
-/* Additional global styles */

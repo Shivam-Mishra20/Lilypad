@@ -4,8 +4,6 @@ import { blogPosts } from '@/Data/Data';
 import BlogCard from './BlogCard';
 
 
-
-
 const Blog_Sec = () => {
     const [startIndex, setStartIndex] = useState(0);
     const productsToShow = 4;
@@ -24,7 +22,7 @@ const Blog_Sec = () => {
         <section className=" dark:bg-black dark:text-lightCyan bg-bgGray     ">
             <div className="container mx-auto   px-10   py-8">
                 <div className='flex items-center  justify-between w-full'>
-                    <h2 className="text-xl sm:text-2xl font-bold dark:text-cyan  text-cyan  font-raleway  ">From The Blogs</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold dark:text-cyan  text-lightgray  font-raleway  ">From The Blogs</h2>
                     <div className="flex  gap-2">
                         <button
                             className="text-black cursor-pointer bg-white rounded-full p-4 shadow-lg"
@@ -42,7 +40,7 @@ const Blog_Sec = () => {
                         </button>
                     </div>
                 </div>
-                <hr class="border dark:border-white my-4 border-black  min-w-full  mx-auto" />
+                <hr className="border dark:border-white my-4 border-black  min-w-full  mx-auto" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-4 gap-6">
 

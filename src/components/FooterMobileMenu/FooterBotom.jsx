@@ -23,22 +23,22 @@ export function FooterBottom() {
                         <Link
                             key={item.name}
                             to={item.href}
-                            className={cn(
-                                "group flex flex-col items-center gap-1 p-2 transition-all",
+                            className=
+                            "group flex flex-col items-center gap-1 p-2 transition-all"
 
-                            )}
+
                         >
                             <Icon
-                                className={cn(
-                                    "w-6 h-6 relative  font-mono transition-colors group-hover:text-cyan",
+                                className=
+                                "w-6 h-6 relative  font-mono transition-colors group-hover:text-cyan"
 
-                                )}
+
                             />
                             <span
-                                className={cn(
-                                    "text-xs font-medium transition-colors group-hover:text-cyan",
+                                className=
+                                "text-xs font-medium transition-colors group-hover:text-cyan"
 
-                                )}
+
                             >
                                 {item.name}
                             </span>
@@ -47,6 +47,6 @@ export function FooterBottom() {
                     );
                 })}
             </div>
-        </nav>
+        </nav >
     );
 }

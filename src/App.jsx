@@ -1,14 +1,11 @@
+import HomePage from "./Page/HomePage"
 
-import HomePage from './Page/HomePage';
+
 
 const App = () => {
   return (
     <>
-
-
       <HomePage />
-
-
 
     </>
   )

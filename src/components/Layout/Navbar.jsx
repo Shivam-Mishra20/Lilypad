@@ -6,14 +6,20 @@ import {
     User,
     SearchCheck,
     AlignJustify,
-    SunMoon,
-    Sun,
-
+    X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "@/Context/ThemeContext";
-
-
+import { Switch } from "@/components/ui/switch";
+import { motion } from "framer-motion";
+import {
+    NavigationMenu,
+    NavigationMenuList,
+    NavigationMenuItem,
+    NavigationMenuTrigger,
+    NavigationMenuContent,
+    NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
 
 const categories = [
     {
@@ -42,8 +48,15 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isFixed, setIsFixed] = useState(false);
     const { darkMode, setDarkMode } = useTheme();
-    const [openDropdown, setOpenDropdown] = useState(null);
+    const [activeDropdown, setActiveDropdown] = useState(null);
 
+    const toggleDropdown = (categoryName) => {
+        setActiveDropdown((prev) => (prev === categoryName ? null : categoryName));
+    };
+
+    const toggleTheme = () => {
+        setDarkMode(!darkMode);
+    };
 
     useEffect(() => {
         const handleScroll = () => setIsFixed(window.scrollY > 0);
@@ -51,21 +64,13 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleMouseEnter = (index) => {
-        clearTimeout(window.leaveTimeout);
-        setOpenDropdown(index);
-    };
-
-    const handleMouseLeave = () => {
-        window.leaveTimeout = setTimeout(() => setOpenDropdown(null), 200);
-    };
-
     const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+
 
     return (
         <nav
-            className={`w-full bg-[#1D1E18] text-white px-4 lg:px-2 py-4 ${isFixed ? "fixed top-0 left-0 z-50 shadow-md" : ""
-                }`}
+            className={`w-full bg-[#1D1E18] text-white px-4 lg:px-2 py-4 ${isFixed ? "fixed top-0 left-0 z-50 shadow-md" : ""}`}
         >
             <div className="flex items-center justify-between">
                 {/* Logo and Hamburger Menu */}
@@ -82,55 +87,39 @@ const Navbar = () => {
                         </Link>
 
                         {/* Navigation Links */}
-                        <ul className="hidden lg:flex md:ml-6 lg:ml-4 lg:space-x-6">
-                            {categories.map((category, index) => (
-                                <li
-                                    key={category.name}
-                                    className="text-xs md:text-[12px] group    relative"
-                                    onMouseEnter={() => handleMouseEnter(index)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <button
-                                        className="flex items-center space-x-1 py-2"
-                                        onClick={() =>
-                                            setOpenDropdown(openDropdown === index ? null : index)
-                                        }
-                                    >
-                                        <span className="relative">
-                                            {category.name}
-                                            {category.items.length > 0 && (
-                                                <span className="absolute -bottom-1 left-0 w-full hidden h-0.5 bg-cyan transition-all group-hover:block"></span>
-                                            )}
-                                        </span>
-                                        {category.items.length > 0 && (
-                                            <div className="relative">
-                                                <ChevronDown
-                                                    className={`h-4 w-4 transform transition-transform duration-300 ${openDropdown === index ? "rotate-180" : "rotate-0"
-                                                        }`}
-                                                />
-                                            </div>
-                                        )}
-                                    </button>
+                        <ul className="hidden lg:flex w-auto">
+                            {categories.map((category, ind) => (
+                                <NavigationMenu key={ind}>
+                                    <NavigationMenuList>
+                                        <NavigationMenuItem>
+                                            <NavigationMenuTrigger className="flex py-2">
+                                                <span className="text-[0.8rem]">{category.name}</span>
+                                            </NavigationMenuTrigger>
 
-                                    {/* Dropdown Menu */}
-                                    {category.items.length > 0 && (
-                                        <ul
-                                            className={`absolute bg-white text-black border border-gray-700 mt-4 shadow-md py-2 w-48 z-10 transition-opacity duration-300 ${openDropdown === index ? "opacity-100 block" : "opacity-0 hidden"
-                                                }`}
-                                        >
-                                            {category.items.map((item) => (
-                                                <li key={item}>
-                                                    <a
-                                                        href="#"
-                                                        className="block px-4 py-2 hover:bg-gray-100"
-                                                    >
-                                                        {item}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
+                                            {/* Dropdown Menu */}
+                                            {category.items.length > 0 && (
+                                                <NavigationMenuContent>
+                                                    <div className="bg-white z-[1000] dark:bg-gray-800 dark:text-cyan text-gray-800 border border-gray-300 shadow-lg rounded-md w-full max-w-[280px] md:max-w-[320px] min-w-[200px] max-h-[300px] overflow-y-auto">
+                                                        <ul className="py-2">
+                                                            {category.items.map((item) => (
+                                                                <li
+                                                                    key={item}
+                                                                    className="px-4 py-3 text-sm font-medium transition-all duration-200 dark:hover:bg-lightgray hover:bg-gray-300 hover:text-cyan-600 cursor-pointer"
+                                                                >
+                                                                    <NavigationMenuLink>
+                                                                        <Link to={`/#${item}`} className="block w-full">
+                                                                            {item}
+                                                                        </Link>
+                                                                    </NavigationMenuLink>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </NavigationMenuContent>
+                                            )}
+                                        </NavigationMenuItem>
+                                    </NavigationMenuList>
+                                </NavigationMenu>
                             ))}
                         </ul>
                     </div>
@@ -138,61 +127,39 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {menuOpen && (
-                    <div className="flex w-full flex-col">
-                        <div className="flex items-center">
+                    <div className=" flex items-center justify-center flex-col w-full " >
+
+
+                        <div className="flex  ">
                             <button
                                 onClick={toggleMenu}
-                                className="mr-2 lg:hidden z-50 focus:outline-none"
+                                className="mr-2 lg:hidden focus:outline-none"
+                                aria-label="Toggle Menu"
                             >
-                                <AlignJustify className="visible" />
+                                <X className="visible" />
                             </button>
-                            <Link to="/" className="text-2xl font-bold w-[160px] flex items-center">
+                            <Link to="/" className="font-bold  w-auto   ">
                                 <img src="/img/lilylogo.png" alt="Lily Logo" />
                             </Link>
                         </div>
-
-                        <ul className="block lg:hidden w-full text-white">
-                            {categories.map((category, index) => (
-                                <li
-                                    key={category.name}
-                                    className="text-xs md:text-sm my-3 border-b  group relative"
-                                    onMouseEnter={() => handleMouseEnter(index)}
-
-                                >
+                        <ul className="space-y-4 my-3 w-full">
+                            {categories.map((category) => (
+                                <li key={category.name} className="relative">
                                     <button
-                                        className="flex items-center space-x-1 py-2"
-                                        onClick={() =>
-                                            setOpenDropdown(openDropdown === index ? null : index)
-                                        }
+                                        onClick={() => toggleDropdown(category.name)}
+                                        className="flex justify-between w-full py-2 px-4 text-left bg-gray-800 text-white rounded-lg"
                                     >
-                                        <span className="relative">
-                                            {category.name}
-                                            {category.items.length > 0 && (
-                                                <span className="absolute -bottom-1 left-0 w-full hidden h-0.5 bg-cyan transition-all group-hover:block"></span>
-                                            )}
-                                        </span>
-                                        {category.items.length > 0 && (
-                                            <div className="relative">
-                                                <ChevronDown
-                                                    className={`h-4 w-4 transform transition-transform duration-300 ${openDropdown === index ? "rotate-180" : "rotate-0"
-                                                        }`}
-                                                />
-                                            </div>
-                                        )}
-                                    </button>
-
-                                    {/* Dropdown Menu */}
-                                    {category.items.length > 0 && (
-                                        <ul
-                                            className={`absolute  right-0   bg-white text-black border border-gray-700 mt-4 shadow-md py-2  w-52 z-10 transition-opacity duration-300 ${openDropdown === index ? "opacity-100 block" : "opacity-0 hidden"
+                                        {category.name}
+                                        <ChevronDown
+                                            className={`ml-2 h-4 w-4 transform text-gray-300 hover:text-white ${activeDropdown === category.name ? "rotate-180" : "rotate-0"
                                                 }`}
-                                        >
+                                        />
+                                    </button>
+                                    {activeDropdown === category.name && (
+                                        <ul className="mt-2 space-y-2 pl-4">
                                             {category.items.map((item) => (
-                                                <li key={item}>
-                                                    <Link
-                                                        to={'/'}
-                                                        className="block px-4 py-2 hover:bg-gray-100"
-                                                    >
+                                                <li key={item} className="text-gray-300">
+                                                    <Link to={`/#${item}`} className="block hover:text-white">
                                                         {item}
                                                     </Link>
                                                 </li>
@@ -205,28 +172,26 @@ const Navbar = () => {
                     </div>
                 )}
 
-                {/* Icons for Mobile */}
+                {/* //icons  */}
                 {!menuOpen && (
                     <div className="flex lg:hidden items-center p-1 gap-2">
                         <SearchCheck className="h-5 w-5" />
                         <User className="h-5 w-5" />
                         <ShoppingCartIcon className="h-5 w-5" />
-                        {darkMode ? (
-                            <SunMoon
-                                className="h-6 w-6 text-yellow-400 cursor-pointer"
-                                onClick={() => setDarkMode(!darkMode)}
+                        <div className="flex items-center cursor-pointer gap-2 sm:pr-3">
+                            <span className="hidden sm:block">Light</span>
+                            <Switch
+                                checked={darkMode}
+                                onCheckedChange={toggleTheme}
+                                className={`relative inline-flex h-6    w-11 items-center rounded-full ${darkMode ? 'bg-cyan' : 'bg-lightgray'}`}
                             />
-                        ) : (
-                            <Sun
-                                className="h-6 w-6 cursor-pointer"
-                                onClick={() => setDarkMode(!darkMode)}
-                            />
-                        )}
+                            <span className="hidden sm:block">Dark</span>
+                        </div>
                     </div>
                 )}
 
                 {/* Search Bar for Desktop */}
-                <div className="relative hidden lg:block w-40 lg:w-50 xl:w-80">
+                <div className="relative hidden lg:block w-40 lg:w-auto xl:w-80">
                     <input
                         type="search"
                         placeholder="Search Product Here..."

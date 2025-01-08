@@ -14,7 +14,9 @@ export default {
 				bgGray: ' #F4F4F4',
 				lightCyan: '#B0FFFF',
 				cyan: '#00FFFF',
+
 				darkGray: '#1A1A1A',
+				lightgray: '#696969',
 				black: '#000000',
 
 

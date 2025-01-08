@@ -59,16 +59,17 @@ const Carousel = () => {
                                 className="text-start space-y-2 sm:space-y-4"
                                 variants={textVariants}
                             >
-                                <h1 className="text-[1.2rem] text-cyan  text-nowrap dark:text-cyan font-bold sm:text-3xl lg:text-5xl">
+                                <h1 className="text-[1.2rem]  text-lightgray text-nowrap dark:text-cyan font-bold sm:text-3xl lg:text-5xl">
                                     {slide.title}
                                 </h1>
+
                                 <p className="text-xl font-normal  dark:text-white hidden sm:block my-2 md:text-sm lg:text-xl">
                                     {slide.description}
                                     <span className="block text-4xl font-bold">{slide.price}</span>
                                 </p>
                                 <p className="text-gray-600 hidden dark:text-white sm:block">{slide.financing}</p>
                                 <div className="flex gap-4 justify-start">
-                                    <button className="bg-cyan text-white dark:text-white font-semibold dark:bg-cyan   px-4 sm:px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">
+                                    <button className="bg-lightgray text-white dark:text-white font-semibold dark:bg-cyan   px-4 sm:px-6 py-2 rounded-full dark:hover:bg-white dark:hover:text-black hover:bg-bgGray hover:text-black transition-colors">
                                         Buy Now
                                     </button>
                                     <button className="underline hidden sm:block px-6 py-2 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 rounded-sm transition-colors">
