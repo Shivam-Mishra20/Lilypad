@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { Trendingitem as products } from "../../Data/Data";
+import { Trendingitem as products } from "../../../Data/Data";
 
 import TrendingCard from "./TrendingCard";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TooltipProvider } from "../ui/tooltip";
+import { TooltipProvider } from "../../ui/tooltip";
 import Tiles from "./Tiles";
 import { category } from "@/Data/Data";
 
@@ -12,7 +12,7 @@ const FilterByCategory = () => {
                 <hr class="border dark:border-white border-black  w-full  mx-auto" />
                 <div className="mt-4 overflow-x-auto  relative">
                     <TooltipProvider>
-                        <Tiles data={category} hidden={false} />
+                        <Tiles data={category} hidden={false} delay={6000} />
                     </TooltipProvider>
                 </div>
             </div>

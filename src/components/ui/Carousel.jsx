@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import 'swiper/swiper-bundle.css';
 import { Autoplay, Navigation } from "swiper/modules";
-import { slides } from "../../Data/Data";
+import { slides } from "@/Data/Data";
+import { Button } from "@/components/ui/button";
 
 
 const Carousel = () => {
@@ -69,12 +70,12 @@ const Carousel = () => {
                                 </p>
                                 <p className="text-gray-600 hidden dark:text-white sm:block">{slide.financing}</p>
                                 <div className="flex gap-4 justify-start">
-                                    <button className="bg-lightgray text-white dark:text-white font-semibold dark:bg-cyan   px-4 sm:px-6 py-2 rounded-full dark:hover:bg-white dark:hover:text-black hover:bg-bgGray hover:text-black transition-colors">
+                                    <Button className="bg-lightgray text-white dark:text-white font-semibold dark:bg-cyan   px-4 sm:px-6 py-2 rounded-full dark:hover:bg-white dark:hover:text-black hover:bg-bgGray hover:text-black transition-colors">
                                         Buy Now
-                                    </button>
-                                    <button className="underline hidden sm:block px-6 py-2 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 rounded-sm transition-colors">
+                                    </Button>
+                                    <Button className="underline hidden sm:block px-6 py-2 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 rounded-sm transition-colors">
                                         Learn More
-                                    </button>
+                                    </Button>
                                 </div>
                             </motion.div>
                             <motion.div

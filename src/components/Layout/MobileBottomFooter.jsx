@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, LayoutGrid, Gift, Pen, MessageCircle } from 'lucide-react';
-import { cn } from "@/lib/utils";
 
-export function FooterBottom() {
+
+const MobileBottomFooter = () => {
 
 
     const navigation = [
@@ -50,3 +50,6 @@ export function FooterBottom() {
         </nav >
     );
 }
+
+
+export default MobileBottomFooter

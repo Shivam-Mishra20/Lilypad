@@ -1,15 +1,16 @@
 import { motion } from 'framer-motion'; // Importing Framer Motion
-import { FooterBottom } from '@/components/FooterMobileMenu/FooterBotom';
-import FilterByPrice from '@/components/FilterBy/FilterByPrice';
-import FilterByCategory from '@/components/FilterBy/FilterByCategory';
+
+import FilterByPrice from '@/components/sections/FilterBy/FilterByPrice';
+import FilterByCategory from '@/components/sections/FilterBy/FilterByCategory';
 import Carousel from '@/components/ui/Carousel';
 import Services from '@/components/ui/Services';
-import TrendingProducts from '@/components/TrendingProduct/TrendingProducts';
-import FaqSec from '@/components/Faq/FaqSec';
-import Blog_Sec from '@/components/BlogsSec/Blog_Sec';
+import TrendingProducts from '@/components/sections/TrendingProduct/TrendingProducts';
+import FaqSec from '@/components/sections/Faq/FaqSec';
+import Blog_Sec from '@/components/sections/BlogsSec/Blog_Sec';
 import Layout from '@/components/Layout/Layout';
-import FilterByBrands from '@/components/FilterBy/FilterByBrands';
+import FilterByBrands from '@/components/sections/FilterBy/FilterByBrands';
 import { faqData } from '@/Data/Data';
+import MobileBottomFooter from '@/components/Layout/MobileBottomFooter';
 
 // motion fadeing 
 
@@ -71,9 +72,7 @@ const HomePage = () => {
 
             {/*  bottom foooter for mobile */}
 
-            <Section>
-                <FooterBottom />
-            </Section>
+            <MobileBottomFooter />
 
 
         </Layout>

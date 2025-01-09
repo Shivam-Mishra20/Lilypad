@@ -1,3 +1,5 @@
+import { Button } from "../../ui/button";
+
 const BlogCard = ({ post }) => (
     <div className="flex flex-col font-inter h-full">
         <div className="relative group">
@@ -18,7 +20,10 @@ const BlogCard = ({ post }) => (
             <p className="text-gray-600 dark:text-white  text-justify ">{post.excerpt}</p>
         </div>
         <div>
-            <button className="px-6 mt-2 py-2 text-black bg-lightgray hover:text-white dark:bg-cyan rounded-full explore-button dark:hover:bg-cyan   hover:bg-black">Read More</button>
+            <Button
+                variant="outline"
+                className="rounded-full bg-gray-300 dark:bg-transparent hover:border  border-black dark:border-white  hover:bg-bgGray dark:hover:text-white"
+            >Read More</Button>
         </div>
     </div>
 );

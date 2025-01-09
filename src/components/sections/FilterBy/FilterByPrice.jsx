@@ -16,7 +16,7 @@ const priceRanges = [
 const FilterByPrice = () => {
     return (
         <section className=" dark:bg-black dark:text-lightCyan bg-bgGray     ">
-            <div className="container  mx-auto  px-8  bg-bgGray   dark:bg-black   md:px-10 py-4">
+            <div className="container  mx-auto  px-8  bg-bgGray   dark:bg-black   lg:px-10 py-4">
                 <h2 className="text-2xl font-raleway  text-lightgray dark:text-cyan font-semibold  mb-4">Filter By Price</h2>
                 <hr className="border dark:border-white border-black  w-full  mx-auto" />
 

@@ -61,11 +61,11 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
 
 export const Services = () => {
     return (
-        <div className="w-full dark:bg-cyan bg-bgGray overflow-hidden">
-            <div className="relative flex items-center">
-                <div className="flex gap-8 animate-marquee">
+        <div className="w-full dark:bg-cyan bg-bgGray    overflow-hidden">
+            <div className="relative flex  items-center">
+                <div className="flex gap-8  animate-marquee">
                     {services.map((feature, index) => (
-                        <div key={index} className="flex-shrink-0">
+                        <div key={index} className="flex-shrink-0  ">
                             <FeatureCard {...feature} />
                         </div>
                     ))}
@@ -83,6 +83,7 @@ export const Services = () => {
           display: flex;
           gap: 2rem;
           animation: marquee 15s linear infinite;
+          
         }
 
         @keyframes marquee {
